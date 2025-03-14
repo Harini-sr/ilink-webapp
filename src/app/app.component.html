@@ -41,20 +41,20 @@
     <div class="content">
       <div class="job-title">🚀 Job Openings</div>
       <div class="job-container">
-        <!-- Left: Job Openings Title -->
+        <!-- Job Section -->
         <div class="job-section">
           <h2>Find Your Dream Job</h2>
           <p>Explore opportunities in top locations!</p>
         </div>
 
-        <!-- Right: Location List -->
+        <!-- Location Section -->
         <div class="location-section">
-          <h3> Select Location</h3>
+          <h3>Select Location</h3>
           <ul class="location-list">
-            <li (click)="openModal('Chennai')">Chennai</li>
-            <li (click)="openModal('Pune')">Pune</li>
-            <li (click)="openModal('USA')">USA</li>
-            <li (click)="openModal('Trichy')">Trichy</li>
+            <li (click)="selectLocation('Chennai')">Chennai</li>
+            <li (click)="selectLocation('Pune')">Pune</li>
+            <li (click)="selectLocation('USA')">USA</li>
+            <li (click)="selectLocation('Trichy')">Trichy</li>
           </ul>
         </div>
       </div>
@@ -62,29 +62,28 @@
   </div>
 </div>
 
-
-
-
 <!-- Modal Section -->
+<div *ngIf="isModalOpen && selectedLocation" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeForm()">&times;</span>
+    <h2>Job Openings in {{ selectedLocation }}</h2>
+    <div *ngFor="let job of jobsByLocation[selectedLocation]">
+      <p>{{ job.title }}</p>
+      <button (click)="openModal(job)" class="btn btn-primary">Apply Now</button>
+    </div>
+  </div>
+</div>
+
 <div *ngIf="selectedJob" class="modal">
   <div class="modal-content">
     <span class="close" (click)="closeForm()">&times;</span>
-
-    <h2>Job Openings</h2>
-    <p>Front end Developer</p> 
- 
-
+    <h2>Selected Job</h2>
+    <p>{{ selectedJob?.title }}</p>
     <button (click)="sendEmail()" class="btn btn-primary">Apply Now</button>
-    <p>Back end Developer</p> 
- 
- 
-     <button (click)="sendEmail()" class="btn btn-primary">Apply Now</button>
-     <p>Full end Developer</p> 
-
-  
-      <button (click)="sendEmail()" class="btn btn-primary">Apply Now</button>
   </div>
 </div>
+
+
 
 <footer class="animated-footer">
   <div class="footer-container">

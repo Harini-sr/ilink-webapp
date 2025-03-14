@@ -6,8 +6,11 @@ ul li a {
     border-image: linear-gradient(to right, blue, red) 1;
     transition: 0.3s;
 }
-
-ul li a:hover {
+.text-danger{
+  border-bottom: 2px solid transparent; 
+  border-image: linear-gradient(to right, blue, red) 1;
+}
+.text-danger:hover {
     font-weight: 600;
     padding: 5px; 
     margin-left: 40px;

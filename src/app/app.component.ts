@@ -8,15 +8,18 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None 
 })
 export class AppComponent {
+
+isShow  = true;
+
   title = 'web-app';
   logopath: string = 'assets/images/iLink-logo.webp';
 
   headerpath: string = 'assets/images/casual.webp';
 
 
-  /* job application */
- selectedLocation: string | null = null;
-  
+  /* job application */  selectedLocation: string | null = null;
+  isModalOpen = false;
+  selectedJob: any = null; // Store selected job details
 
   jobsByLocation: any = {
     Chennai: [
@@ -37,44 +40,30 @@ export class AppComponent {
     ]
   };
 
-/*
-
-    selectedJob: any = null; 
-
-  openModal(location: string) {
-    this.selectedJob = { title: `Job at ${location}` }; 
+  selectLocation(location: string) {
+    this.selectedLocation = location;
+    this.isModalOpen = true; // Open modal for selected location
   }
-
-  closeForm() {
-    this.selectedJob = null; 
-  }
- */
-  selectedJob: any = null; // Store selected job details
-  isModalOpen = false;
-  jobs = [
-    { title: 'Software Developer', location: 'Chennai' },
-    { title: 'Frontend Engineer', location: 'Pune' },
-    { title: 'Backend Engineer', location: 'USA' },
-    { title: 'Full Stack Developer', location: 'Trichy' }
-  ];
 
   openModal(job: any) {
     this.selectedJob = job; // Set selected job details
-    this.isModalOpen = true; 
+    console.log('Selected Job:', this.selectedJob); // Debug: Log selected job
   }
 
   closeForm() {
-    this.selectedJob = null; // Close modal
+    this.selectedJob = null; // Clear selected job
+    this.isModalOpen = false; // Close modal
   }
 
   sendEmail() {
     if (this.selectedJob) {
-      const email = "hr@example.com"; // Replace with your HR email
+      const email = "harinirj.sr@gmail.com"; // Replace with your HR email
       const subject = `Job Application for ${this.selectedJob.title} - ${this.selectedJob.location}`;
       const body = `Dear HR,\n\nI am interested in applying for the ${this.selectedJob.title} position located in ${this.selectedJob.location}. Please find my resume attached.\n\nBest regards,`;
       const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+      console.log('Mailto link:', mailtoLink); // Debug: Log mailto link
       window.location.href = mailtoLink; // Opens email client
     }
   }
-}
+  }
