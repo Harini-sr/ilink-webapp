@@ -3,19 +3,19 @@ ul li a {
     padding: 5px; 
     margin-left: 40px;
     border-bottom: 2px solid transparent; 
-    border-image: linear-gradient(to right, blue, red) 1;
+    border-image: linear-gradient(to right, black, red) 1;
     transition: 0.3s;
 }
 .text-danger{
   border-bottom: 2px solid transparent; 
-  border-image: linear-gradient(to right, blue, red) 1;
+  border-image: linear-gradient(to right, black, red) 1;
 }
 .text-danger:hover {
     font-weight: 600;
     padding: 5px; 
     margin-left: 40px;
     border-bottom: 2px solid transparent; 
-    color: blue !important;
+    color: black !important;
     border-image: linear-gradient(to right, yellow, rgb(255, 0, 38)) 1;
     transform: scale(1.05);
 }
@@ -64,7 +64,7 @@ ul li a {
 .header-text h1 {
     position: relative;
     color: red; 
-    font-size: 2rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     font-weight: bold;
    
     text-align: center;
@@ -73,8 +73,9 @@ ul li a {
     position: relative;
     color: black; 
     font-weight: bold;
-   
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
+    
 }
 
 
@@ -199,6 +200,7 @@ ul li a {
     top: 0;
     left: 0;
     width: 100%;
+    padding: 10px;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -226,10 +228,64 @@ ul li a {
     cursor: pointer;
   }
   
-  
+  /* Service */
+  .service {
+    border-radius: 10px;
+    box-shadow: 8px 5px 10px 5px rgba(0, 0, 0, 0.5); 
+}
+.ptag{
+ border-bottom: 2px solid red;
+ border-image: linear-gradient(to right, yellow, rgb(255, 0, 38)) 1;
+ border-bottom: 2px solid transparent; 
 
-  
 
+}
+.ptag:hover{
+  border-bottom: 2px solid red;
+  border-image: linear-gradient(to right, rgba(108, 201, 101, 0.847), rgb(255, 0, 38)) 1;
+  border-bottom: 2px solid transparent; 
+  transform: scale(1.05);
+}
+span{
+  color: #000;
+  background-color: white;
+  padding: 3px;
+}
+.service img{
+  border-radius: 50px;
+}
+.service img:hover{
+  transform: scale(1.05);
+}
+  /* about us */
+
+  #about{
+    background-color:rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  #about h1{
+    color: black;
+    border-bottom: 2px solid transparent; 
+    border-image: linear-gradient(to right, black, red) 1;
+    transition: 0.3s;
+    display: inline-block; /* Changed from inline */
+    text-align: center;
+  }
+  .about-card{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+
+  }
+  .about-card .card{
+    background-color: white;
+  }
+  .about-card p{
+    height: 150px;
+  }
+  .about-card:hover {
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05); 
+  }
 
  /*  @keyframes fadeIn {
     from { opacity: 0; }
@@ -257,7 +313,69 @@ ul li a {
     animation: fadeInUp 1.5s ease-in-out;
   }
   
+  .soft-glow{
+    padding: 7px;
+   position: relative;
+    bottom: 90px;
+
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0,0,0.3);
+   
+  }
+ 
+ 
+ 
+ 
+  .carousel-item {
+    transition: transform 0.6s ease-in-out;
+    padding: 30px;
+  }
   
+  .testimonial-content {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  img {
+    border: 3px solid #ddd;
+    padding: 5px;
+  }
+  
+  .bi-star-fill {
+    color: gold;
+    font-size: 18px;
+  }
+  
+  .bi-star {
+    color: #ccc;
+    font-size: 18px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  .modal-dialog {
+    max-width: 100%; /* Adjust percentage as needed */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
   .footer-container {
     display: flex;
     justify-content: space-between;

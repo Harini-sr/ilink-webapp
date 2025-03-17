@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-root',
@@ -66,4 +68,42 @@ isShow  = true;
       window.location.href = mailtoLink; // Opens email client
     }
   }
+  isShows = false;
+
+  isOpen() {
+    this.isShows = true;
+  }
+
+  closeModal() {
+    this.isShows = false;
+  }
+
+  microsoft: string = "assets/images/microsoft.jpg";
+  aws: string = "assets/images/aws.jpg";
+  databricks: string = "assets/images/databricks.jpg";
+  ptc: string = "assets/images/ptc.jpg";
+  salesforce: string = "assets/images/salesforce.jpg";
+  uipath: string = "assets/images/uipath.jpg";
+
+/* service */
+service:string = "assets/images/digital-ai.jpg";
+
+testimonials = [
+  { name: "Abishek", rating: 5, comment: "Excellent service!", image: "assets/images/2.jpg" },
+  { name: "Monica", rating: 4, comment: "Very professional!", image: "assets/images/3.jpg" },
+  { name: "Swetha", rating: 5, comment: "Highly recommended!", image: "assets/images/4.jpg" },
+  { name: "Karthik", rating: 4, comment: "Amazing experience!", image: "assets/images/1.jpg" }
+];
+
+
+ngAfterViewInit() {
+  if (typeof window !== 'undefined') {
+    console.log('Initializing AOS...');
+    AOS.init({
+      duration: 1000,
+      delay: 200
+    });
+  }
+}
+
   }

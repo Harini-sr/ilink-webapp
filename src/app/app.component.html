@@ -1,15 +1,18 @@
 <div class="container-fluid">
   <div class="row bg-light">
     <div class="col-6 col-md-6 p-0">
-      <img [src]="logopath" alt="Ilink-Logo" width="200px" height="80px" class="img-fluid">
+      <img [src]="logopath" alt="Ilink-Logo" width="200px" height="90px" >
     </div>
     <div class="col-6 col-md-6">
+      
         <nav class="navbar navbar-expand-lg">
           <ul class="navbar-nav m-3">
             <li class="nav-item">  <a class="nav-link text-danger" routerLink="/">Home</a></li>
-            <li class="nav-item">  <a class="nav-link text-danger" routerLink="/">About Us</a></li>
-            <li class="nav-item">  <a class="nav-link text-danger" routerLink="/">Careers</a></li>
-            <li class="nav-item">  <a class="nav-link text-danger" routerLink="/">Contact Us</a></li>
+            <li class="nav-item">  <a class="nav-link text-danger" routerLink="/" fragment="about">About Us</a></li>
+            <li class="nav-item">  <a class="nav-link text-danger" routerLink="/" fragment="careers">Careers</a></li>
+            <li class="nav-item">  <a class="nav-link text-danger" routerLink="/" fragment="service">Services</a></li>
+
+            <li class="nav-item">  <a class="nav-link text-danger" routerLink="/" fragment="contact">Contact Us</a></li>
           </ul>
         </nav>
     </div>
@@ -20,35 +23,196 @@
   <img [src]="headerpath" alt="Ilink-Logo" class="img-fluid header-img">
   <h1 class="header-text">Welcome to Ilink</h1>
 </header> -->
-<header class="header-container" [ngStyle]="{'background-image': 'url(' + headerpath + ')'}">
+<header class="header-container" [ngStyle]="{'background-image': 'url(' + headerpath + ')'}" data-aos="zoom-out" data-aos-delay="50">
   <div class="overlay"></div>
 <!--   <h1 class="header-text">Welcome to Ilink</h1> -->
    <div class="header-text">
-   <h1>Welcome to Ilink</h1>
+   <h1>Welcome to ilink</h1>
    <p>At iLink, we're committed to innovation and excellence. Explore our job openings and become part of our dynamic team.</p>
 
    </div>
 </header>
+
+<!-- About Us -->
+
+
+<div class="container-fluid p-3"  id="about" >
+  <h1>About Us</h1>
+  <p class="text-center">iLink was a pioneer in delivering integrated solutions through leading-edge management 
+    consulting when founded in 2002. Today, we’re a global consultancy that helps ambitious 
+    organizations embrace a transformational approach to innovate growth and sustainability,
+     unlock the potential to make change happen, and achieve lasting gains that will thrive 
+     for this generation and the next. </p>
+     <p class="text-center">Across 18 offices in 8 countries, we work alongside our clients as one team with a 
+      shared vision to deliver better, faster, and more enduring outcomes.</p>
+  <div class="row container-fluid m-3">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+    <div class="card about-card" style=" background-color:white; color:black; border-radius: 10px; height: 240px;">
+<div class="card-body">
+  <h5 class="text-center">Vision</h5>
+  <p>To be a trusted advisor for our customers and to help them achieve their business 
+    objectives by delivering high-quality technology solutions. </p>
+</div>
+    </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card about-card" style=" background-color:white; color:black; border-radius: 10px; height: 240px;">
+    <div class="card-body">
+      <h5 class="text-center">Technologies</h5>
+    <p>We use a variety of advanced technologies in our company. To learn more, please click 'View'</p>
+    <button class="soft-glow" (click)="isOpen()">View</button>
+
+    </div>
+        </div>
+          </div>
+          <div class="modal" *ngIf="isShows">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body text-dark d-flex justify-content-center gap-3">
+                  <span class="close" (click)="closeModal()" >&times;</span>
+                  <span class="fw-bold">
+                    <img [src]="microsoft" alt="microsoft" height="100px" width="100px">
+                  </span>
+                  <span class="fw-bold">
+                    <img [src]="aws" alt="aws" height="100px" width="100px">
+                  </span>
+                  <span class="fw-bold">
+                    <img [src]="databricks" alt="databricks" height="100px" width="100px">
+                  </span>
+                  <span class="fw-bold">
+                    <img [src]="ptc" alt="ptc" height="100px" width="100px">
+                  </span>
+                  <span class="fw-bold">
+                    <img [src]="salesforce" alt="salesforce" height="100px" width="100px">
+                  </span>
+                  <span class="fw-bold">
+                    <img [src]="uipath" alt="" height="100px" width="100px">
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card about-card" style="background-color:white; color:black; border-radius: 10px;">
+        <div class="card-body">
+          <h5 class="text-center">iLink Partner Ecosystem  </h5>
+        <p style="height: 150px; text-align: justify;">
+          Our network of partners defines our deep industry expertise and command of 
+          fast-evolving technologies helping us push the boundaries of what’s possible in a digital era.
+      
+         
+        </p>
+        </div>
+            </div>
+              </div>   
+  </div>
+</div>
+
+
+
+<!-- About Us -->
+
+<!-- Services -->
+
+
+<div class="container-fluid p-5" style="background-color: #CE1B28; " id="service" data-aos="fade-up" data-aos-delay="100">
+  <h1 class="text-center">Services</h1>
+<div class="row container service d-flex justify-content-center align-items-center" style="width: 80%;  background-color:white; margin-left: 130px;">
+  <div class="col-md-6">
+    <img [src]="service" alt="serive"  height="200px" width="500px">
+  </div>
+  <div class="col-md-6 p-4" >
+    <h4>Digital Engineering & AI</h4>
+    <p class="ptag">
+     <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+        <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+      </svg>
+     </span>  Experience</p>
+    <p class="ptag"><span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+      </svg>
+    </span>Innovation</p>
+    <p class="ptag"><span>
+      <i class="bi bi-graph-up-arrow"></i>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  
+    </span>Transformation</p> 
+     <p class="ptag"><span>
+      <i class="fa-solid fa-handshake"></i>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  
+     </span>Assurance</p>
+  
+  
+  </div>
+</div>
+
+
+</div>
+
+<!-- Services -->
+
+<!-- Testiminols -->
+
+
+<div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button *ngFor="let review of testimonials; let i = index" type="button" data-bs-target="#testimonialCarousel"
+      [attr.data-bs-slide-to]="i" [class.active]="i === 0"></button>
+  </div>
+
+  <!-- Carousel Items -->
+  <div class="carousel-inner">
+    <div *ngFor="let review of testimonials; let i = index" class="carousel-item" [class.active]="i === 0">
+      <div class="testimonial-content text-center">
+        <img [src]="review.image" class="rounded-circle mb-3" width="90" height="90" alt="User Image">
+        <p class="text-muted">"{{ review.comment }}"</p>
+        <h5 class="fw-bold">{{ review.name }}</h5>
+        <!-- Star Ratings -->
+        <div>
+          <span *ngFor="let star of [].constructor(5); let j = index">
+            <i class="bi" [ngClass]="{'bi-star-fill': j < review.rating, 'bi-star': j >= review.rating}"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
 
 
 <!-- Job application -->
 
 
 
-<div class="job-openings">
+<div class="job-openings" id="careers">
   <div class="job-bg">
     <div class="overlay"></div>
     <div class="content">
-      <div class="job-title">🚀 Job Openings</div>
+      <div class="job-title col-12 col-md-4">🚀 Job Openings</div>
       <div class="job-container">
         <!-- Job Section -->
-        <div class="job-section">
+        <div class="job-section col-12 col-md-4">
           <h2>Find Your Dream Job</h2>
           <p>Explore opportunities in top locations!</p>
         </div>
 
         <!-- Location Section -->
-        <div class="location-section">
+        <div class="location-section col-12 col-md-4">
           <h3>Select Location</h3>
           <ul class="location-list">
             <li (click)="selectLocation('Chennai')">Chennai</li>
@@ -85,7 +249,7 @@
 
 
 
-<footer class="animated-footer">
+<footer class="animated-footer" id="contact" data-aos="fade-up" data-aos-delay="100">
   <div class="footer-container">
     <!-- Left -->
     <div class="footer-section about">
@@ -124,4 +288,8 @@
     <p>© 2024 iLink Careers. All Rights Reserved.</p>
   </div>
 </footer>
+
+
+
+
 
